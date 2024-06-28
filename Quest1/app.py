@@ -1,15 +1,7 @@
-{
-    "version": 2,
-    "builds": [
-      {
-        "src": "app/app.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "app/app.py"
-      }
-    ]
-}
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+if __name__ == '__main__':
+    app.run()    
